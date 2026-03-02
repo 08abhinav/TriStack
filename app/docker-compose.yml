@@ -1,0 +1,20 @@
+services:
+  backend:
+    container_name: backend
+    build:
+      context: backend/
+    image: backend-image
+    ports:
+      - "8500:8500"
+    environment:
+      MONGODB_URL: ${MONGODB_URL}
+  
+  frontend:
+    container_name: frontend
+    build:
+      context: frontend/
+    image: frontend-image
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
