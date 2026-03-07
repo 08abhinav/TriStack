@@ -41,7 +41,7 @@ The Jenkins pipeline consists of **11 stages**, where each stage performs a spec
 
 ---
 
-# Stage 1: Git Checkout
+## Stage 1: Git Checkout
 In this stage, Jenkins pulls the source code from the GitHub repository into the Jenkins workspace.
 
 After running the pipeline, you can verify the repository on the Jenkins server:
@@ -52,10 +52,10 @@ ls
 ```
 You will see the application files downloaded from GitHub.
 
-# Stage 2 and Stage 3: Backend Compile & Frontend Compile
+## Stage 2 and Stage 3: Backend Compile & Frontend Compile
 This stage installs backend and frontend dependencies and prepares the application for further steps.
 
-# Stage 4: Trivy File System Scan
+## Stage 4: Trivy File System Scan
 Trivy is used to scan the repository for vulnerabilities and security issues.
 
 It helps detect:
@@ -63,7 +63,7 @@ It helps detect:
 - Dependency vulnerabilities
 - Misconfigurations
 
-# Stage 5: Gitleaks Scan
+## Stage 5: Gitleaks Scan
 Gitleaks scans the repository for hardcoded secrets such as:
 
 - API keys
@@ -72,7 +72,7 @@ Gitleaks scans the repository for hardcoded secrets such as:
 - Private keys
 This ensures sensitive information is not accidentally committed to the repository.
 
-# Stage 6: SonarQube Code Analysis
+## Stage 6: SonarQube Code Analysis
 SonarQube performs automated code quality and security analysis.
 
 It analyzes the code for:
@@ -86,12 +86,12 @@ It analyzes the code for:
 Note:
 SonarQube requires a separate server, so a dedicated EC2 instance should be created to host the SonarQube service.
 
-# Stage 7: Login to Amazon ECR
+## Stage 7: Login to Amazon ECR
 In this stage, Jenkins authenticates with Amazon Elastic Container Registry (ECR) to allow pushing Docker images.
 
 Amazon ECR is a fully managed container registry used to store and manage Docker images.
 
-# Stage 8 & Stage 9: Build and Push Backend & Frontend Image
+## Stage 8 & Stage 9: Build and Push Backend & Frontend Image
 Jenkins builds the backend  and frontend Docker image and pushes it to the ECR repository.
 
 Steps performed:
@@ -99,10 +99,10 @@ Steps performed:
 - Tag image with ECR repository
 - Push image to ECR
 
-# Stage 10: Docker Image Storage in ECR
+## Stage 10: Docker Image Storage in ECR
 After both images are pushed, they are stored inside the ECR repository.
 
-# Stage 11: Deploy using Docker Compose
+## Stage 11: Deploy using Docker Compose
 In the final stage, the application is deployed using Docker Compose.
 
 The docker-compose.yml file references the images stored in ECR.
