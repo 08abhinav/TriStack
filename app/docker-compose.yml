@@ -1,9 +1,11 @@
 services:
   backend:
     container_name: backend
-    build:
-      context: backend/
-    image: backend-image
+    # build: #used for local devlopement
+    #   context: backend/
+    # image: backend-image
+
+    image: ${ECR_BACKEND_IMAGE_URI}
     ports:
       - "8500:8500"
     environment:
@@ -11,9 +13,11 @@ services:
   
   frontend:
     container_name: frontend
-    build:
-      context: frontend/
-    image: frontend-image
+    # build: #used for local devlopement
+    #   context: frontend/
+    # image: frontend-image
+
+    image: ${ECR_FRONTEND_IMAGE_URI}
     ports:
       - "5173:80"
     depends_on:
