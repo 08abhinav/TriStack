@@ -47,28 +47,28 @@ TriStack/
 │   │   └── package-lock.json
 │   │
 │   └── frontend/
-│       ├── public/
-│       ├── src/
-│       │   ├── api/
-│       │   ├── assets/
-│       │   ├── components/
-│       │   ├── App.jsx
-│       │   ├── index.css
-│       │   └── main.jsx
-│       │
-│       ├── .dockerignore
-│       ├── Dockerfile
-│       ├── eslint.config.js
-│       ├── nginx.config.js
-│       ├── vite.config.js
-│       ├── package.json
-│       ├── package-lock.json
-│       └── index.html
-|    └── .gitignore
-|    └── docker-compose.yml
-|    └── jenkins_CI_architecture.png
-|    └── Jenkins_CI_docs.md
-|    └── JenkinsFile
+│   |   ├── public/
+│   |   ├── src/
+│   |   │   ├── api/
+│   |   │   ├── assets/
+│   |   │   ├── components/
+│   |   │   ├── App.jsx
+│   |   │   ├── index.css
+│   |   │   └── main.jsx
+│   |   │
+│   |   ├── .dockerignore
+│   |   ├── Dockerfile
+│   |   ├── eslint.config.js
+│   |   ├── nginx.config.js
+│   |   ├── vite.config.js
+│   |   ├── package.json
+│   |   ├── package-lock.json
+│   |   └── index.html
+|   └── .gitignore
+|   └── docker-compose.yml
+|   └── jenkins_CI_architecture.png
+|   └── Jenkins_CI_docs.md
+|   └── JenkinsFile
 |
 ```
 
