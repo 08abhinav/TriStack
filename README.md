@@ -64,6 +64,12 @@ TriStack/
 │       ├── package.json
 │       ├── package-lock.json
 │       └── index.html
+|    └── .gitignore
+|    └── docker-compose.yml
+|    └── jenkins_CI_architecture.png
+|    └── Jenkins_CI_docs.md
+|    └── JenkinsFile
+|
 ```
 
 ---
