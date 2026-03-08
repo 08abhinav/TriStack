@@ -32,10 +32,10 @@ services:
     # image: frontend-image
 
     image: ${ECR_FRONTEND_IMAGE_URI}
-    environments:
-      BASE_URL: ${BASE_URL}
     ports:
       - "5173:80"
+    environment:
+      BASE_URL: ${BASE_URL}
     depends_on:
       - backend
     networks:
