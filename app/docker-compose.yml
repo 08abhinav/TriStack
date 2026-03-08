@@ -1,4 +1,14 @@
 services:
+  database:
+    container_name: mongodb
+    image: mongodb/mongodb-community-server
+    ports:
+     - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - app-network
+
   backend:
     container_name: backend
     # build: #used for local devlopement
@@ -9,8 +19,12 @@ services:
     ports:
       - "8500:8500"
     environment:
-      MONGODB_URL: ${MONGODB_URL}
-  
+      MONGODB_URL: mongodb://database:27017/todo
+    depends_on:
+      - database
+    networks:
+      - app-network
+
   frontend:
     container_name: frontend
     # build: #used for local devlopement
@@ -22,3 +36,11 @@ services:
       - "5173:80"
     depends_on:
       - backend
+    networks:
+      - app-network
+  
+volumes:
+  mongo-data:
+
+networks:
+  app-network:
