@@ -1,7 +1,8 @@
 import axios from "axios";
 
+const BASE_URL = import.meta.env.BASE_URL
 const API = axios.create({
-  baseURL: "http://localhost:8500",
+  baseURL: BASE_URL,
 });
 
 export const getTodos = () => API.get("/api/tasks");
